@@ -1,0 +1,36 @@
+export = Controller;
+declare class Controller {
+    constructor(restartCallback: any, exitCallback: any);
+    zigbee: Zigbee;
+    mqtt: MQTT;
+    eventBus: EventBus;
+    state: State;
+    restartCallback: any;
+    exitCallback: any;
+    publishEntityState(IDorName: any, payload: any, stateChangeReason?: any): Promise<void>;
+    enableDisableExtension(enable: any, name: any): Promise<void>;
+    onZigbeeAdapterDisconnected(): Promise<void>;
+    addExtension(extension: any): void;
+    extensions: (ExtensionPublish | ExtensionReceive | ExtensionNetworkMap | ExtensionConfigure | ExtensionDeviceGroupMembership | ExtensionBridge | ExtensionGroups | ExtensionBind | ExtensionReport | ExtensionOnEvent | ExtensionOTAUpdate)[];
+    start(): Promise<void>;
+    stop(reason?: any): Promise<void>;
+    onZigbeeEvent(type: any, data: any): Promise<void>;
+    onMQTTMessage(payload: any): void;
+    iteratePayloadAttributeOutput(topicRoot: any, payload: any, options: any): Promise<void>;
+    callExtensionMethod(method: any, parameters: any, extensions?: any): Promise<void>;
+}
+import Zigbee = require("./zigbee");
+import MQTT = require("./mqtt");
+import EventBus = require("./eventBus");
+import State = require("./state");
+import ExtensionPublish = require("./extension/publish");
+import ExtensionReceive = require("./extension/receive");
+import ExtensionNetworkMap = require("./extension/networkMap");
+import ExtensionConfigure = require("./extension/configure");
+import ExtensionDeviceGroupMembership = require("./extension/legacy/deviceGroupMembership");
+import ExtensionBridge = require("./extension/bridge");
+import ExtensionGroups = require("./extension/groups");
+import ExtensionBind = require("./extension/bind");
+import ExtensionReport = require("./extension/legacy/report");
+import ExtensionOnEvent = require("./extension/onEvent");
+import ExtensionOTAUpdate = require("./extension/otaUpdate");

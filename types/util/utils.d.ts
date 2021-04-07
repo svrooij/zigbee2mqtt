@@ -1,0 +1,24 @@
+export function getZigbee2mqttVersion(): Promise<any>;
+export function getDependencyVersion(depend: any): Promise<any>;
+export function objectHasProperties(object: any, properties: any): boolean;
+export function toSnakeCase(value: any): any;
+export function sleep(seconds: any): Promise<any>;
+export function getObjectProperty(object: any, key: any, defaultValue: any): any;
+export function equalsPartial(object: any, expected: any): boolean;
+export function getResponse(request: any, data: any, error: any): {
+    data: any;
+    status: string;
+};
+export function capitalize(s: any): any;
+export function parseJSON(value: any, failedReturnValue: any): any;
+export function getExternalConvertersDefinitions(settings: any): Generator<any, void, unknown>;
+export function validateFriendlyName(name: any, throwFirstError?: boolean): string[];
+export function loadModuleFromFile(modulePath: any): any;
+export function loadModuleFromText(moduleCode: any): any;
+export function getKey(object: any, value: any, fallback: any, convertTo: any): any;
+export declare function millisecondsToSeconds(milliseconds: any): number;
+export declare function secondsToMilliseconds(seconds: any): number;
+export declare function getEndpointNames(): string[];
+export declare function isXiaomiDevice(device: any): boolean;
+export declare function isIkeaTradfriDevice(device: any): boolean;
+export declare function formatDate(date: any, type: any): any;

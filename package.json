@@ -3,6 +3,7 @@
   "version": "1.18.2-dev",
   "description": "Zigbee to MQTT bridge using Zigbee-herdsman",
   "main": "index.js",
+  "types":"types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Koenkk/zigbee2mqtt.git"
@@ -24,7 +25,8 @@
     "eslint": "node_modules/.bin/eslint lib/",
     "start": "node index.js",
     "test": "jest test",
-    "test-watch": "jest test --watch"
+    "test-watch": "jest test --watch",
+    "gen-types": "tsc"
   },
   "author": "Koen Kanters",
   "license": "GPL-3.0",
@@ -61,7 +63,8 @@
     "eslint-config-google": "*",
     "eslint-plugin-jest": "*",
     "jest": "*",
-    "tmp": "*"
+    "tmp": "*",
+    "typescript": "^4.2.3"
   },
   "jest": {
     "coverageThreshold": {
